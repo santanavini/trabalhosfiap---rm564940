@@ -11,17 +11,17 @@
 ## Nome do grupo
 
 ## 👨‍🎓 Integrantes: 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 1</a>
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 2</a>
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 3</a> 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 4</a> 
+- <a href="https://www.linkedin.com/company/inova-fusca">Vinícius Pereira Santana 1</a>
+- <a href="https://www.linkedin.com/company/inova-fusca">Vitor Augusto Prado Guisso 2</a>
+- <a href="https://www.linkedin.com/company/inova-fusca">Ryan Carlos Sousa Alves da Cunha 3</a> 
+- <a href="https://www.linkedin.com/company/inova-fusca">Thyago Batista de Amorim de Paiva 4</a> 
 - <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 5</a>
 
 ## 👩‍🏫 Professores:
 ### Tutor(a) 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do Tutor</a>
+- <a href="https://www.linkedin.com/company/inova-fusca">Lucas Gomes Moreira</a>
 ### Coordenador(a)
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do Coordenador</a>
+- <a href="https://www.linkedin.com/company/inova-fusca">Andre Godoi Chiovato</a>
 
 
 ## 📜 Descrição
