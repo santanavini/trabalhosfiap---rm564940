@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="4AED8638-A41C-C42B-470D-27AA7860EDE7">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 16:59:18 UTC</createdTime>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</BusinessInfoDesign>
