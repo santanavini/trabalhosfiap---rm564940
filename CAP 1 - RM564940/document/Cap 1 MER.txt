@@ -1,0 +1,27 @@
+- MER:
+
+1 Fazenda tem várias culturas = Fazenda 1:N
+1 Cultura tem vários sensores = Cultura 1:N
+1 Sensor tem várias leituras = Sensor 1:N
+
+- Exemplo de Uso
+O relacionamento sugerido é referente a umidade média de um local específico em um intervalo de tempo, o banco pode te retornar com base nas leituras do sensor de umidade para aquele local
+
+- Exemplo de Resultado:
+Solo do Talhão A1 com umidade baixa (22.5%). Iniciando irrigação por 30 minutos. pH abaixo do ideal (5.8): recomendada aplicação de calcário. Fósforo e potássio abaixo do ideal: agendar adubação para amanhã."
+
+ - Dados a serem analizados:
+ 
+Se umidade < 30%, acionar irrigação.
+
+Se pH < 6.0, recomendar correção com calcário.
+
+Se P ou K < 20 mg/kg, agendar adubação.
+
+SENSORES
+Sensor de umidade S1 = float
+Sensor de pH S2 = int
+Sensor de Nutrientes (Fosforo) S3 = bool
+Sensor de Nutrientes (Potassio) S4 = bool
+
+
