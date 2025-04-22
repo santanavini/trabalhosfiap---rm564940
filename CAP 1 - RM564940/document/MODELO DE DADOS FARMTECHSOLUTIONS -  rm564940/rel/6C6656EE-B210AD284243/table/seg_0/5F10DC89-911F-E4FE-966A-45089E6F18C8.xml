@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5F10DC89-911F-E4FE-966A-45089E6F18C8" name="FAZENDAS">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 19:31:15 UTC</createdTime>
+<generatorID>16B45B6D-5C44-CB07-5852-570D7993CAD1</generatorID>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_fazenda" id="9C2DEE7B-48B5-2438-7C9F-817429DFBF30">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 19:31:15 UTC</createdTime>
+<generatorID>DD4AC4BC-1B44-FF12-D913-FC249A7D69ED</generatorID>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name_fazenda" id="9020F73D-62FA-EC83-756F-6C65A1C73643">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 19:31:15 UTC</createdTime>
+<generatorID>050769D1-A645-E240-47BE-A6596BDB4812</generatorID>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8DB20065-C9CD-666A-9FCD-77C31D4DE666" name="FAZENDAS_PK">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 19:31:15 UTC</createdTime>
+<generatorID>BC273075-80F1-E27B-50CF-820D15ACD9ED</generatorID>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9C2DEE7B-48B5-2438-7C9F-817429DFBF30"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="03FE1B66-441F-A172-7773-56BAA73E756D" name="UN_FAZENDAS_NAME">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-18 02:57:01 UTC</createdTime>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9020F73D-62FA-EC83-756F-6C65A1C73643"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

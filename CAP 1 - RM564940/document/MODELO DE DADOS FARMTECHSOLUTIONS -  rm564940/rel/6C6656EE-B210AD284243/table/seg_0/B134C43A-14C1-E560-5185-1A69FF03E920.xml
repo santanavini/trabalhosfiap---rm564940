@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B134C43A-14C1-E560-5185-1A69FF03E920" name="LEITURAS">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 19:31:15 UTC</createdTime>
+<generatorID>0C7863FF-0AA8-EFA6-5BC3-3D410C48A593</generatorID>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_leitura" id="E046A115-ADBD-8D52-DF71-582EBC32D0B9">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 19:31:15 UTC</createdTime>
+<generatorID>0225546A-9D60-D8B7-BC68-108739DCB4F1</generatorID>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_leitura" id="56F67E44-1846-37D4-2786-6EC230A2E94F">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 19:31:15 UTC</createdTime>
+<generatorID>8D4545D7-1609-5474-80F9-8A3E2E1C7241</generatorID>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SENSORES_id_sensor" id="5D341085-46EA-700C-AE50-2EFDE745C759">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 19:31:15 UTC</createdTime>
+<generatorID>621CBBDA-07D7-21FC-5ADC-152A74291F08</generatorID>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3D1B3B52-0C1A-4A4B-23E6-443E693A9FDD" referredColumn="71B8D327-EBEF-99A8-ACCB-E20535C9DC20"/>
+</associations>
+</Column>
+<Column name="valor_lido" id="C4477382-BE53-EF05-0C53-3B954405D763">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 19:31:15 UTC</createdTime>
+<generatorID>D386253A-EB8C-B911-9408-C68F990A8843</generatorID>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C3AFBA6D-B55C-FAE6-A12A-9BCCAFE636B8" name="LEITURAS_PK">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 19:31:15 UTC</createdTime>
+<generatorID>E358EF5C-A8F2-824B-AC1D-DAFEB7632A0B</generatorID>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E046A115-ADBD-8D52-DF71-582EBC32D0B9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="43B9B085-F9B3-B932-694A-52911AD83E11" name="LEITURAS_SENSORES_FK">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 19:31:15 UTC</createdTime>
+<generatorID>B29FD024-963B-9B5B-2D4F-F78F75C417FF</generatorID>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5D341085-46EA-700C-AE50-2EFDE745C759"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

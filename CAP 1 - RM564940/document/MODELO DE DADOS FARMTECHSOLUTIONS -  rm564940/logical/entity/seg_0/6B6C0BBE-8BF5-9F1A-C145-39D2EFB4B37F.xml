@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="6B6C0BBE-8BF5-9F1A-C145-39D2EFB4B37F" name="CULTURAS">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 17:53:40 UTC</createdTime>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<engineerTo>
+<item key="6C6656EE-4E25-DE37-D71D-B210AD284243" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_cultura" id="4038FBB9-E91D-41A7-12C6-82B23E0A99E4">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 17:54:57 UTC</createdTime>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<engineerTo>
+<item key="6C6656EE-4E25-DE37-D71D-B210AD284243" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name_cultura" id="D0E4FA38-3574-4718-1B1C-F78457CA7D25">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 17:55:29 UTC</createdTime>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<engineerTo>
+<item key="6C6656EE-4E25-DE37-D71D-B210AD284243" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_fazenda" id="95FDF727-D53B-907A-D0AD-048349A87847">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 18:07:36 UTC</createdTime>
+<generatorID>9733CF1E-EFD7-ED21-97FB-AD22A8046F55</generatorID>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<engineerTo>
+<item key="6C6656EE-4E25-DE37-D71D-B210AD284243" value="true"/>
+</engineerTo>
+<referedAttribute>DD4AC4BC-1B44-FF12-D913-FC249A7D69ED</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F6439971-7675-9BB0-2727-54A4C2B3B638" name="CULTURA PK">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 17:55:21 UTC</createdTime>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="6C6656EE-4E25-DE37-D71D-B210AD284243" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4038FBB9-E91D-41A7-12C6-82B23E0A99E4</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

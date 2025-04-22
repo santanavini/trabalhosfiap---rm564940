@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="36CA6B35-1257-75E5-C50D-713500FEF5ED" name="SENSORES">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 19:31:15 UTC</createdTime>
+<generatorID>DC559321-21C9-A571-709C-3083B3453A34</generatorID>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_sensor" id="71B8D327-EBEF-99A8-ACCB-E20535C9DC20">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 19:31:15 UTC</createdTime>
+<generatorID>0E891615-3CDF-D952-9DB5-B4FD231A76DD</generatorID>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name_sensor" id="431A21E4-5D22-D6C7-9AC6-D22B2D5FDA7F">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 19:31:15 UTC</createdTime>
+<generatorID>889C5F5E-B944-7A3D-5257-F92590243B11</generatorID>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="local_sensor" id="76C4EC45-2A32-FD26-95F8-720FA89F62B8">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 19:31:15 UTC</createdTime>
+<generatorID>3A53BB2E-2A39-F70C-3EE0-8B617034E1C8</generatorID>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CULTURAS_id_cultura" id="871FDF3B-15A7-A955-A277-B3536C8AB2A5">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 19:31:15 UTC</createdTime>
+<generatorID>9CE46DCC-299C-2F19-B71C-B2103CAB6B1E</generatorID>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1C6BE149-EBF7-500F-7D2E-28147467B761" referredColumn="9BA80CA0-B0C6-4CB6-E1AC-4FA66042EA6A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="43389D69-95E8-8B04-2A0E-8B7742DE1A11" name="SENSORES_PK">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 19:31:15 UTC</createdTime>
+<generatorID>9F83E86C-2269-8E05-F183-5ADBC91AE9AC</generatorID>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="71B8D327-EBEF-99A8-ACCB-E20535C9DC20"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1D357CE8-91D0-7BB4-60BE-D80917B89658" name="UN_SENSORES_NAME">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-18 03:01:35 UTC</createdTime>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="431A21E4-5D22-D6C7-9AC6-D22B2D5FDA7F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0A761387-2872-339C-AB4A-6B28112A95C2" name="SENSORES_CULTURAS_FK">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 19:31:15 UTC</createdTime>
+<generatorID>E1251A0D-E121-7777-E608-604E4839CA09</generatorID>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="871FDF3B-15A7-A955-A277-B3536C8AB2A5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

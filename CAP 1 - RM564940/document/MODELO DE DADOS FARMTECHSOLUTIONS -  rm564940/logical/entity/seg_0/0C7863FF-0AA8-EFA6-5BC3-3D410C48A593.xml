@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0C7863FF-0AA8-EFA6-5BC3-3D410C48A593" name="LEITURAS">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 18:52:00 UTC</createdTime>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<engineerTo>
+<item key="6C6656EE-4E25-DE37-D71D-B210AD284243" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_leitura" id="0225546A-9D60-D8B7-BC68-108739DCB4F1">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 18:57:00 UTC</createdTime>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<engineerTo>
+<item key="6C6656EE-4E25-DE37-D71D-B210AD284243" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_leitura" id="8D4545D7-1609-5474-80F9-8A3E2E1C7241">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 18:58:04 UTC</createdTime>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<engineerTo>
+<item key="6C6656EE-4E25-DE37-D71D-B210AD284243" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_sensor" id="621CBBDA-07D7-21FC-5ADC-152A74291F08">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 19:13:41 UTC</createdTime>
+<generatorID>B29FD024-963B-9B5B-2D4F-F78F75C417FF</generatorID>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<engineerTo>
+<item key="6C6656EE-4E25-DE37-D71D-B210AD284243" value="true"/>
+</engineerTo>
+<referedAttribute>0E891615-3CDF-D952-9DB5-B4FD231A76DD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="valor_lido" id="D386253A-EB8C-B911-9408-C68F990A8843">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 19:21:45 UTC</createdTime>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<engineerTo>
+<item key="6C6656EE-4E25-DE37-D71D-B210AD284243" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E358EF5C-A8F2-824B-AC1D-DAFEB7632A0B" name="LEITURAS PK">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 18:57:59 UTC</createdTime>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="6C6656EE-4E25-DE37-D71D-B210AD284243" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0225546A-9D60-D8B7-BC68-108739DCB4F1</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

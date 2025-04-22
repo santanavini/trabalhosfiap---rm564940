@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="184069CB-0254-91B6-FFD7-C8DF559C2E1F" containerWithKeyObject="92C3F8EA-7715-60AB-03F6-A5F7008589EF" localFKIndex="31DBD93B-F7DB-4864-A2D0-A98376E49FE3" name="CULTURAS_FAZENDAS_FK">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 19:31:15 UTC</createdTime>
+<generatorID>9733CF1E-EFD7-ED21-97FB-AD22A8046F55</generatorID>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<referredTableLongName>FAZENDAS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>5F10DC89-911F-E4FE-966A-45089E6F18C8</referredTableID>
+<keyObject>8DB20065-C9CD-666A-9FCD-77C31D4DE666</keyObject>
+<referredKeyID>8DB20065-C9CD-666A-9FCD-77C31D4DE666</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_fazenda</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
