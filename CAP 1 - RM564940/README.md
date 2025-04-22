@@ -26,7 +26,7 @@
 
 ## 📜 Descrição
 
-*Descreva seu projeto com base no texto do PBL (até 600 palavras)*
+*O presente projeto tem como objetivo demonstrar a modelagem de dados proposta pelos requisitos da atividade do CAP 1, nele você deve encontrar o MER e o DER, com um adicional do arquivo SQL.
 
 
 ## 📁 Estrutura de pastas
@@ -35,34 +35,28 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
 - <b>.github</b>: Nesta pasta ficarão os arquivos de configuração específicos do GitHub que ajudam a gerenciar e automatizar processos no repositório.
 
-- <b>assets</b>: aqui estão os arquivos relacionados a elementos não-estruturados deste repositório, como imagens.
+- <b>assets</b>: Aqui estão os arquivos relacionados a elementos não-estruturados deste repositório, como imagens.
 
 - <b>config</b>: Posicione aqui arquivos de configuração que são usados para definir parâmetros e ajustes do projeto.
 
-- <b>document</b>: aqui estão todos os documentos do projeto que as atividades poderão pedir. Na subpasta "other", adicione documentos complementares e menos importantes.
+- <b>document</b>: Aqui esta o documento de texto com a proposta do MER.
 
-- <b>scripts</b>: Posicione aqui scripts auxiliares para tarefas específicas do seu projeto. Exemplo: deploy, migrações de banco de dados, backups.
+- <b>scripts</b>: Aqui esta o arquivo adicional do SQL gerado através  do Data Moduler.
 
-- <b>src</b>: Todo o código fonte criado para o desenvolvimento do projeto ao longo das 7 fases.
+- <b>src</b>: Aqui esta o arquivo Modelo de dados.dmd (DER).
 
 - <b>README.md</b>: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
 
 ## 🔧 Como executar o código
 
-*Acrescentar as informações necessárias sobre pré-requisitos (IDEs, serviços, bibliotecas etc.) e instalação básica do projeto, descrevendo eventuais versões utilizadas. Colocar um passo a passo de como o leitor pode baixar o seu código e executá-lo a partir de sua máquina ou seu repositório. Considere a explicação organizada em fase.*
+*1 - Abra o arquivo MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940.dmd no programa Oracle Data Moduler que esta na pasta src
+2 - Abra o arquivo SCRIPT_DDL_FARMTECHSOLUITIONS.SQL no programa Oracle SQL Developer que esta na pasta scripts
+3 - Abra o arquivo Cap 1 MER.txt no bloco de notas que esta na pasta document*
 
 
 ## 🗃 Histórico de lançamentos
 
-* 0.5.0 - XX/XX/2024
-    * 
-* 0.4.0 - XX/XX/2024
-    * 
-* 0.3.0 - XX/XX/2024
-    * 
-* 0.2.0 - XX/XX/2024
-    * 
-* 0.1.0 - XX/XX/2024
+* 0.1.0 - 21/04/2025
     *
 
 ## 📋 Licença
