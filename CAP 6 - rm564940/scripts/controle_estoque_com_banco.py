@@ -1,10 +1,56 @@
 
+#GRUPO
+#RyanCarlos_RM561677_fase2_cap6
+#ThyagoPaiva_RM562049_fase2_cap6
+#ViniciusSantana_RM564940_fase2_cap6
+#VitorGuisso_RM562317_fase2_cap6
+
 
 import json
 from datetime import datetime, timedelta
 import os
+import cx_Oracle
 
 CAMINHO_JSON = "estoque.json"
+
+# Dados de conexão Oracle
+username = "rm562317"
+password = "100598"
+dsn = "oracle.fiap.com.br/orcl"
+
+def conectar_banco():
+    try:
+        return cx_Oracle.connect(username, password, dsn)
+    except cx_Oracle.DatabaseError as erro:
+        print("Erro ao conectar ao banco:", erro)
+        return None
+
+def salvar_no_banco(insumo):
+    conexao = conectar_banco()
+    if conexao:
+        try:
+            cursor = conexao.cursor()
+            cursor.execute("""
+                INSERT INTO insumos_agro (
+                    nome, fornecedor, unidade, quantidade, consumo, lead_time,
+                    estoque_minimo, data_cadastro, data_aviso_compra
+                ) VALUES (
+                    :1, :2, :3, :4, :5, :6, :7,
+                    TO_DATE(:8, 'DD/MM/YYYY'),
+                    TO_DATE(:9, 'DD/MM/YYYY')
+                )
+            """, (
+                insumo["nome"], insumo["fornecedor"], insumo["unidade"],
+                insumo["quantidade"], insumo["consumo"], insumo["lead_time"],
+                insumo["estoque_minimo"], insumo["data_cadastro"], insumo["data_aviso_compra"]
+            ))
+            conexao.commit()
+            print("Insumo salvo no banco Oracle com sucesso!")
+        except cx_Oracle.DatabaseError as erro:
+            print("Erro ao inserir no banco:", erro)
+        finally:
+            cursor.close()
+            conexao.close()
 
 def carregar_estoque():
     if os.path.exists(CAMINHO_JSON):
@@ -86,6 +132,7 @@ def adicionar_insumo(estoque):
 
     estoque.append(insumo)
     salvar_estoque(estoque)
+    salvar_no_banco(insumo)
     print("Insumo cadastrado com sucesso!")
 
 def verificar_estoque():
@@ -109,6 +156,12 @@ def verificar_estoque():
             insumo["quantidade"] = nova_quantidade
             alterado = True
 
+        data_aviso = datetime.strptime(insumo["data_aviso_compra"], "%d/%m/%Y").date()
+        if data_aviso < hoje:
+            insumo["data_aviso_compra"] = hoje.strftime("%d/%m/%Y")
+            data_aviso = hoje
+            alterado = True
+
         unidade = plural(insumo['unidade'], nova_quantidade)
         print(f"\nInsumo: {insumo['nome']}")
         print(f"Fornecedor: {insumo['fornecedor']}")
@@ -118,13 +171,8 @@ def verificar_estoque():
         print(f"Data de cadastro: {insumo['data_cadastro']}")
         print(f"Data da próxima compra: {insumo['data_aviso_compra']}")
 
-        data_aviso = datetime.strptime(insumo['data_aviso_compra'], "%d/%m/%Y").date()
-
-        if data_aviso <= hoje:
-            if data_aviso < data_cadastro:
-                print("Estoque defasado. Realizar a compra imediatamente!")
-            else:
-                print("Atenção: chegou o dia de realizar o pedido deste insumo.")
+        if data_aviso == hoje:
+            print("Atenção: chegou o dia de realizar o pedido deste insumo.")
         else:
             dias_restantes = (data_aviso - hoje).days
             print(f"Ainda faltam {dias_restantes} dias para realizar um novo pedido.")
@@ -137,7 +185,8 @@ def editar_insumo(estoque):
     if not estoque:
         print("Nenhum insumo cadastrado.")
         return
-    print('\n--- EDITAR INSUMO ---')
+
+    print("\n--- EDITAR INSUMO ---")
     for i, insumo in enumerate(estoque):
         print(f"{i + 1}. {insumo['nome']}")
     print("0. Voltar ao menu de insumos")
@@ -146,57 +195,29 @@ def editar_insumo(estoque):
         try:
             escolha = int(input("\nEscolha o número do insumo que deseja editar: "))
             if escolha == 0:
-                print("Voltando ao menu de insumos.")
                 return
             elif 1 <= escolha <= len(estoque):
                 insumo = estoque[escolha - 1]
                 print(f"\nEditando insumo: {insumo['nome']}")
 
-                insumo['nome'] = input("Novo nome do insumo: ").strip()
+                insumo['nome'] = input("Novo nome: ").strip()
                 insumo['fornecedor'] = input("Novo fornecedor: ").strip()
 
-                unidade = input("Nova unidade de medida (saco/kg/litro): ").strip().lower()
+                unidade = input("Nova unidade (saco/kg/litro): ").strip().lower()
                 while unidade not in ["saco", "kg", "litro"]:
-                    print("Unidade inválida. Escolha entre: saco, kg ou litro.")
-                    unidade = input("Nova unidade de medida (saco/kg/litro): ").strip().lower()
+                    print("Unidade inválida.")
+                    unidade = input("Nova unidade (saco/kg/litro): ").strip().lower()
                 insumo['unidade'] = unidade
 
-                while True:
-                    try:
-                        insumo['quantidade'] = float(input(f"Nova quantidade em estoque ({unidade}): ").replace(",", "."))
-                        if insumo['quantidade'] < 0:
-                            print("A quantidade não pode ser menor que zero.")
-                        else:
-                            break
-                    except ValueError:
-                        print("Digite um número válido.")
-
-                while True:
-                    try:
-                        insumo['consumo'] = float(input(f"Novo consumo médio diário ({unidade}): ").replace(",", "."))
-                        if insumo['consumo'] <= 0:
-                            print("O consumo deve ser maior que zero.")
-                        else:
-                            break
-                    except ValueError:
-                        print("Digite um número válido.")
-
-                while True:
-                    try:
-                        insumo['lead_time'] = int(input("Novo tempo de entrega (em dias): "))
-                        if insumo['lead_time'] <= 0:
-                            print("O tempo deve ser maior que zero.")
-                        else:
-                            break
-                    except ValueError:
-                        print("Digite um número válido.")
+                insumo['quantidade'] = float(input("Nova quantidade: ").replace(",", "."))
+                insumo['consumo'] = float(input("Novo consumo diário: ").replace(",", "."))
+                insumo['lead_time'] = int(input("Novo tempo de entrega (dias): "))
 
                 data_cadastro = datetime.today().date()
                 estoque_minimo = insumo['consumo'] * insumo['lead_time']
                 estoque_operacional = insumo['quantidade'] - estoque_minimo
-                tempo_estoque_util = estoque_operacional / insumo['consumo'] if insumo['consumo'] != 0 else 0
-
-                data_aviso = data_cadastro if tempo_estoque_util < 0 else data_cadastro + timedelta(days=tempo_estoque_util)
+                tempo_util = estoque_operacional / insumo['consumo'] if insumo['consumo'] != 0 else 0
+                data_aviso = data_cadastro if tempo_util < 0 else data_cadastro + timedelta(days=tempo_util)
 
                 insumo['estoque_minimo'] = estoque_minimo
                 insumo['data_cadastro'] = data_cadastro.strftime("%d/%m/%Y")
@@ -215,7 +236,7 @@ def remover_insumo(estoque):
         print("Nenhum insumo cadastrado.")
         return
 
-    print('\n--- REMOVER INSUMO ---')
+    print("\n--- REMOVER INSUMO ---")
     for i, insumo in enumerate(estoque):
         print(f"{i + 1}. {insumo['nome']}")
     print("0. Voltar ao menu de insumos")
@@ -224,7 +245,6 @@ def remover_insumo(estoque):
         try:
             escolha = int(input("\nEscolha o número do insumo que deseja remover: "))
             if escolha == 0:
-                print("Voltando ao menu de insumos.")
                 return
             elif 1 <= escolha <= len(estoque):
                 removido = estoque.pop(escolha - 1)
@@ -243,7 +263,7 @@ def menu_controle_insumos(estoque):
         print("2. Editar insumo")
         print("3. Remover insumo")
         print("4. Voltar ao menu principal")
-        opcao = input("\nEscolha uma opção: ")
+        opcao = input("Escolha uma opção: ")
 
         if opcao == "1":
             adicionar_insumo(estoque)
@@ -263,7 +283,7 @@ def menu():
         print("1. Controle de insumos")
         print("2. Verificar estoque")
         print("3. Sair")
-        opcao = input("\nEscolha uma opção: ")
+        opcao = input("Escolha uma opção: ")
 
         if opcao == "1":
             menu_controle_insumos(estoque)
@@ -278,13 +298,6 @@ def menu():
 menu()
 
 
-'''
-#SUGESTÕES DE APRIMORAMENTO FUTURO
-    - MANDAR MENSAGEM PARA O USUÁRIO AVISANDO QUE CHEGOU O DIA DA COMPRA;
-    - CONTROLE DE CONSUMO DE ESTOQUE AUTOMATIZADO (USO DE SENSORES/ CÓDIGO DE BARRAS)
-    - COMPRAR INSUMOS COM UM CLIQUE
-    
-    
 
 
 
@@ -293,51 +306,3 @@ menu()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-from datetime import datetime, timedelta
-import os
-
-consumo_medio = int(input("Consumo médio diário: "))
-lead_time = int(input("Tempo de entrega (em dias): "))
-quantidade_atual = int(input("Quantidade atual em estoque: "))
-
-data_cadastro = datetime.today().date()
-estoque_minimo = consumo_medio * lead_time
-
-estoque_operacional = quantidade_atual - estoque_minimo
-tempo_estoque_util = (estoque_operacional * 1)/consumo_medio
-
-
-data_aviso_compra = data_cadastro + timedelta(days=tempo_estoque_util)
-
-
-print('consumo medio',consumo_medio)
-print('lead time',lead_time)
-print('quantidade atual',quantidade_atual)
-
-print('data cadastro', data_cadastro)
-print('estoque mínimo',estoque_minimo)
-print('dias para o pedido', tempo_estoque_util)
-print('data aviso compra',data_aviso_compra)
-
-'''
