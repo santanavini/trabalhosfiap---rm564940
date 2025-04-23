@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="farmtechsolutions" id="37D8E71F-E4D2-4AD8-80B3-19A15EB8FF74" version="3.5">
+<createdBy>outtech</createdBy>
+<createdTime>2025-04-15 16:59:17 UTC</createdTime>
+<ownerDesignName>MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>37D8E71F-E4D2-4AD8-80B3-19A15EB8FF74</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="10E9C075-8B4F-6C12-EC47-D83DA36F9F7C">
+<designStoragePath>/SCRIPT_DDL_FARMTECHSOLUITIONS</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>
