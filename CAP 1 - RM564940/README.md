@@ -50,8 +50,9 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 ## 🔧 Como executar o código
 
 *1 - Abra o arquivo MODELO DE DADOS FARMTECHSOLUTIONS -  rm564940.dmd no programa Oracle Data Moduler que esta na pasta src
-2 - Abra o arquivo SCRIPT_DDL_FARMTECHSOLUITIONS.SQL no programa Oracle SQL Developer que esta na pasta scripts
-3 - Abra o arquivo Cap 1 MER.txt no bloco de notas que esta na pasta document*
+ 2 - Abra o arquivo SCRIPT_DDL_FARMTECHSOLUITIONS.SQL no programa Oracle SQL Developer que esta na pasta scripts
+ 3 - Abra o arquivo Cap 1 MER.txt no bloco de notas que esta na pasta document
+ 4 - Caso o arquivo .dmd não abra o diagrama, você pode importar arquivo .SQL que esta em scripts direto no Data Modeler em Arquivo > Importar > Arquivo DDL > Selecione o Arquivo > Mesclar e ele deve exibir o Diagrama*
 
 
 ## 🗃 Histórico de lançamentos
